@@ -1,4 +1,4 @@
-# Get the branch name from a pull request (PR)
+# Get the branch name from a pull request (PR) [![main](https://github.com/bahmutov/get-branch-name-by-pr/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/bahmutov/get-branch-name-by-pr/actions/workflows/ci.yml)
 
 Forked from [andrevalentin/get-branch-name-by-pr](https://github.com/andrevalentin/get-branch-name-by-pr).
 
@@ -8,6 +8,7 @@ It can either accept a specific PR ID/number, or try to take from the current co
 # Usage
 
 ### Example of providing a PR ID to fetch & subsequently use the branch name
+
 ```yaml
 - name: Get branch name based on PR ID
   uses: andrevalentin/get-branch-name-by-pr@1.0.0
@@ -23,6 +24,7 @@ It can either accept a specific PR ID/number, or try to take from the current co
 ```
 
 ### Example where the action just takes the PR ID from context
+
 ```yaml
 - name: Get branch name based on PR
   uses: andrevalentin/get-branch-name-by-pr@1.0.0
