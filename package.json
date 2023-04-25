@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrevalentin/get-branch-name-by-pr.git"
+    "url": "git+https://github.com/bahmutov/get-branch-name-by-pr.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andrevalentin/get-branch-name-by-pr/issues"
+    "url": "https://github.com/bahmutov/get-branch-name-by-pr/issues"
   },
-  "homepage": "https://github.com/andrevalentin/get-branch-name-by-pr#readme",
+  "homepage": "https://github.com/bahmutov/get-branch-name-by-pr#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1"

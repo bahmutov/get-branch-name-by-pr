@@ -11,7 +11,7 @@ It can either accept a specific PR ID/number, or try to take from the current co
 
 ```yaml
 - name: Get branch name based on PR ID
-  uses: andrevalentin/get-branch-name-by-pr@1.0.0
+  uses: bahmutov/get-branch-name-by-pr@v1
   id: pr_data
   with:
     repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -27,7 +27,7 @@ It can either accept a specific PR ID/number, or try to take from the current co
 
 ```yaml
 - name: Get branch name based on PR
-  uses: andrevalentin/get-branch-name-by-pr@1.0.0
+  uses: bahmutov/get-branch-name-by-pr@v1
   id: pr_data
   with:
     repo-token: ${{ secrets.GITHUB_TOKEN }}
