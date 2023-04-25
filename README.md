@@ -1,5 +1,7 @@
 # Get the branch name from a pull request (PR)
 
+Forked from [andrevalentin/get-branch-name-by-pr](https://github.com/andrevalentin/get-branch-name-by-pr).
+
 A Github Action that retrieves the branch name from a PR and sets it in the output for other actions to use.
 It can either accept a specific PR ID/number, or try to take from the current context if none is provided.
 
