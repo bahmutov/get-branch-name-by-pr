@@ -23,6 +23,11 @@ async function run() {
     })
 
     core.setOutput('branch', response.data.head.ref)
+    console.log(
+      'pull request %s is from the branch %s',
+      prNumber,
+      response.data.head.ref,
+    )
   } catch (error) {
     core.error(error)
     core.setFailed(error.message)
