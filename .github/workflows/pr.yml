@@ -15,6 +15,10 @@ jobs:
 
       - name: Print branch name
         uses: bahmutov/get-branch-name-by-pr@HEAD
+        id: branch
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pr-id: ${{ github.event.pull_request.number }}
+
+      - name: Print the branch name
+        run: echo "Branch name is ${{ steps.branch.outputs.branch }}"
