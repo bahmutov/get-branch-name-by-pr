@@ -14,7 +14,7 @@ jobs:
         run: npm run build
 
       - name: Print branch name
-        uses: bahmutov/get-branch-name@HEAD
+        uses: bahmutov/get-branch-name-by-pr@HEAD
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pr-id: ${{ github.event.pull_request.number }}
