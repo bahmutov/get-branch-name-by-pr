@@ -14,6 +14,9 @@ async function run() {
       )
     }
 
+    if (!token) {
+      console.warn('No token provided, might not work')
+    }
     const octokit = new github.getOctokit(token)
 
     const response = await octokit.pulls.get({
@@ -29,6 +32,10 @@ async function run() {
       response.data.head.ref,
     )
   } catch (error) {
+    console.error('get-branch-name-by-pr')
+    console.error('Caught an error!')
+    console.error(error)
+
     core.error(error)
     core.setFailed(error.message)
   }
