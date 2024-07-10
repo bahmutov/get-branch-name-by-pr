@@ -1,0 +1,22 @@
+name: main
+on: [pull_request]
+
+jobs:
+  print-branch-name:
+    runs-on: ubuntu-20.04
+    name: release
+    if: github.ref != 'refs/heads/master'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: bahmutov/npm-install@v1
+
+      - name: Build 🏗️
+        run: npm run build
+
+      - name: Print branch name
+        uses: bahmutov/get-branch-name@HEAD
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-id: ${{ github.event.pull_request.number }}
