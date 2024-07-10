@@ -5,6 +5,7 @@ async function run() {
   try {
     const userSuppliedPrId = core.getInput('pr-id')
     const token = core.getInput('repo-token')
+    console.log('PR ID: %s', userSuppliedPrId)
 
     const prNumber = getPrNumber(userSuppliedPrId)
 
@@ -12,9 +13,16 @@ async function run() {
       core.setFailed(
         'Pull request number was neither set by user nor obtainable by context',
       )
+    } else {
+      console.log('PR Number: %s', prNumber)
     }
 
+    if (!token) {
+      console.warn('No token provided, might not work')
+    }
     const octokit = new github.getOctokit(token)
+    console.log('octokit created')
+    console.log(octokit)
 
     const response = await octokit.pulls.get({
       owner: github.context.repo.owner,
@@ -29,6 +37,10 @@ async function run() {
       response.data.head.ref,
     )
   } catch (error) {
+    console.error('get-branch-name-by-pr')
+    console.error('Caught an error!')
+    console.error(error)
+
     core.error(error)
     core.setFailed(error.message)
   }
