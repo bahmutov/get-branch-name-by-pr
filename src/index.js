@@ -20,11 +20,10 @@ async function run() {
     if (!token) {
       console.warn('No token provided, might not work')
     }
-    const octokit = new github.getOctokit(token)
+    const octokit = github.getOctokit(token)
     console.log('octokit created')
-    console.log(octokit)
 
-    const response = await octokit.pulls.get({
+    const response = await octokit.rest.pulls.get({
       owner: github.context.repo.owner,
       repo: github.context.repo.repo,
       pull_number: prNumber,
